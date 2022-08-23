@@ -1,19 +1,20 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @article.title %>
-</p>
+<br><br>
+<figure class="image is-3by1">
+    <%= image_tag(@article.featured_image) if @article.featured_image.attached? %>
+</figure><br>
+<div class="columns">
+  <div class="column">
+    <p class="title"><%= @article.title %></p>
+  </div>
+</div><br><br>
+<div class="columns">
+  <div class="column is-three-quarters"><%= @article.body %>
+  <div class="column is-three-quarters"><%= @article.author %>
+</div>
 
-<p>
-  <strong>Body:</strong>
-  <%= @article.body %>
-</p>
-
-<p>
-  <strong>Author:</strong>
-  <%= @article.author %>
-</p>
-
-<%= link_to 'Edit', edit_article_path(@article) %> |
+<ul>
+<%= link_to 'Edit', edit_article_path(@article) %>
 <%= link_to 'Back', articles_path %>
+</ul>
