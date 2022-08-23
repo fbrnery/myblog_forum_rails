@@ -5,5 +5,5 @@ Rails.application.routes.draw do
   get 'home/regras'
   get 'home/faqs'
   resources :articles
-
+  resources :comments
    end
