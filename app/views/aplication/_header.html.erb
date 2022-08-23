@@ -1,0 +1,33 @@
+ <header class="p-3 text-bg-dark">
+    <div class="container">
+      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+        <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+          <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"/></svg>
+        </a>
+
+        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+          <a class="nav-link px-2 text-secondary" href="#"><%= link_to "Home", home_index_path%></a>
+           <a class="nav-link px-2 text-white" href="#"><%= link_to "FAQs", home_faqs_path%></a>
+        </ul>
+
+        <div class="navbar-end">
+        <div class="navbar-item">
+          <div class="buttons">
+            <% unless user_signed_in? %>
+              <a class="button is-info" href='/users/sign_up'>
+                <strong>Cadastre-se</strong>
+              </a>
+              <a class="button is-success" href='/users/sign_in'>
+                Entrar
+              </a>
+            <% end %>  
+            <% if user_signed_in? %>
+              <%= link_to "Sair", destroy_user_session_path, method: :delete, class: 'button is-light'  %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+
+      </div>
+    </div>
+  </header>
