@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get 'home/index'
   get 'home/regras'
   get 'home/faqs'
-  resources :articles
-  resources :comments
+  resources :articles do
+    resources :comments
    end
+end
