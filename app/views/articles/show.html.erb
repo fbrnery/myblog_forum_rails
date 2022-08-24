@@ -11,12 +11,15 @@
 </div><br><br>
 <div class="columns">
   <div class="column is-three-quarters"><%= @article.body %>
-  <div class="column is-three-quarters"><%= @article.author %>
+  <div class="column is-three-quarters">Autor: <%= @article.author %>
 </div>
 
 <ul>
-<%= link_to 'Edit', edit_article_path(@article) %>
-<%= link_to 'Back', articles_path %>
+<br>
+<div class="btn-group" role="group" aria-label="Basic outlined example">
+<%= link_to 'Editar', edit_article_path(@article), :class => "btn btn-outline-primary" %>
+<%= link_to 'Voltar', articles_path, :class => "btn btn-outline-primary" %>
+</div>
 </ul>
 <hr>
 <h2>Comente a publicação:</h2>

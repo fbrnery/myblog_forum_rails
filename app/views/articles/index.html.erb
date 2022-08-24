@@ -1,6 +1,12 @@
 <p id="notice"><%= notice %></p>
 
+<div class="container">
+  <a class="button is-info is-hovered" href='/home/index'>
+    << Voltar <<
+  </a>
+</div>
 <br><br>
+  <hr>
 <h1 class="title">Publicações</h1>
 <br>
  
@@ -23,10 +29,7 @@
                <h5>Data da publicação: <%= article.created_at.strftime("%d/%m/%Y") %></h5>
               <hr>
                     <div class="btn-group" role="group" aria-label="Basic outlined example">
-                    <%= link_to 'Ver', article, :class => "btn btn-outline-primary" %>
-                    <%= link_to 'Editar', edit_article_path(article), :class => "btn btn-outline-primary" %>
-                    <%= link_to 'Apagar', article, method: :delete, data: { confirm: 'Are you sure?' },
-                     :class => "btn btn-outline-primary" %>
+                    <%= link_to 'Comentar publicação', article, :class => "btn btn-outline-primary" %>
                   </div>
               <hr>
           </div>
