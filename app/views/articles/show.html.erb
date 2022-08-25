@@ -11,7 +11,7 @@
 </div><br><br>
 <div class="columns">
   <div class="column is-three-quarters"><%= @article.body %>
-  <div class="column is-three-quarters">Autor: <%= @article.author %>
+  <div class="column is-three-quarters">Autor da Publicação: <%= @article.author %>
 </div>
 
 <ul>
@@ -22,30 +22,9 @@
 </div>
 </ul>
 <hr>
-<h2>Comente a publicação:</h2>
-<% @article.comments.each do |comment| %>
-  <p>
-    <strong>Commenter:</strong>
-    <%= comment.commenter %>
-  </p>
 
-  <p>
-    <strong>Comment:</strong>
-    <%= comment.body %>
-  </p>
-<% end %>
+<h2>Comentários !!!</h2>
+<%= render @article.comments %>
 
-<h2>Add a comment:</h2>
-<%= form_with model: [ @article, @article.comments.build ] do |form| %>
-  <p>
-    <%= form.label :Título %><br>
-    <%= form.text_field :commenter %>
-  </p>
-  <p>
-    <%= form.label :Comentário %><br>
-    <%= form.text_area :body %>
-  </p>
-  <p>
-    <%= form.submit %>
-  </p>
-<% end %>
+<%= render 'comments/form' %>
+

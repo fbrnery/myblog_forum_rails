@@ -26,11 +26,6 @@ class CommentsController < ApplicationController
     redirect_to article_path(@article)
   end
 
-  private
-    def comment_params
-      params.require(:comment).permit(:commenter, :body)
-  end
-
   # PATCH/PUT /comments/1 or /comments/1.json
   def update
     respond_to do |format|
@@ -46,12 +41,10 @@ class CommentsController < ApplicationController
 
   # DELETE /comments/1 or /comments/1.json
   def destroy
+    @article = Article.find(params[:article_id])
+    @comment = @article.comments.find(params[:id])
     @comment.destroy
-
-    respond_to do |format|
-      format.html { redirect_to comments_url, notice: "Comment was successfully destroyed." }
-      format.json { head :no_content }
-    end
+    redirect_to article_path(@article)
   end
 
   private

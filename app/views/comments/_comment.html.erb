@@ -1,0 +1,20 @@
+<p>
+  <strong>Título: </strong>
+  <%= comment.commenter %>
+</p>
+<p>
+  <strong>Autor do Comentário:</strong>
+  <%= comment.author %>
+</p>
+
+<p>
+  <strong>Comentário:</strong>
+  <%= comment.body %>
+</p>
+
+ <div class="btn-group" role="group" aria-label="Basic outlined example">
+     <%= link_to 'Apagar comentário', [comment.article, comment],
+              method: :delete,
+              data: { confirm: "Are you sure?" }, :class => "btn btn-outline-primary" %>
+</div>
+<hr>
