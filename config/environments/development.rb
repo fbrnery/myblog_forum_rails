@@ -36,17 +36,7 @@ Rails.application.configure do
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = false
 
-  config.action_mailer.raise_delivery_errors = true
-
-  # Gmail SMTP server setup
-  ActionMailer::Base.smtp_settings = {
-    :address => "smtp.gmail.com",
-    :enable_starttls_auto => true,
-    :port => 587,
-    :authentication => :plain,
-    :user_name => "fbrnery@gmail.com",
-    :password => 'fbfbfb8878'
-  }  
+  config.action_mailer.raise_delivery_errors = false
 
 
   config.action_mailer.perform_caching = false
