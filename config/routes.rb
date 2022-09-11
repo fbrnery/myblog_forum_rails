@@ -5,6 +5,9 @@ Rails.application.routes.draw do
   get 'home/regras'
   get 'home/faqs'
   resources :articles do
+      member do 
+        post :notify_friend 
+      end
     resources :comments
    end
   end

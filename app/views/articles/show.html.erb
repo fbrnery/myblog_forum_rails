@@ -23,8 +23,15 @@
 </ul>
 <hr>
 
+<h1><% link_to 'Email a friend', '#', :onclick => "$('#notify_form').slideDown()" %>
+<%= render 'notify_friend' %>
+</h1>
+
 <h2>Comentários !!!</h2>
 <%= render @article.comments %>
 
 <%= render 'comments/form' %>
+
+<% link_to 'Email a friend', '#', :onclick => "$('#notify_form').slideDown()" %>
+<%= render 'notify_friend' %>
 
